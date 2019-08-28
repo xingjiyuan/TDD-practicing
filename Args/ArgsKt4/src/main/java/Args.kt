@@ -1,12 +1,12 @@
 class Args(val schema: Schema) {
-    private val handledList = mutableListOf<InputArg>()
+    private val inputHandler = InputHandler()
     fun handleInput(input: String) {
-        InputHandler().apply { handle(input) }.handledList.toCollection(handledList)
+        inputHandler.handle(input)
     }
 
     fun get(name: String): Any {
-        val inputValue = handledList.firstOrNull { it.name == name }?.value
-        return when (schema.specList.first { it.name == name }.type) {
+        val inputValue = inputHandler.getInputValue(name)
+        return when (schema.getTypeSpec(name)) {
             "int" -> {
                 inputValue?.toInt() ?: 0
             }
@@ -27,5 +27,6 @@ class Args(val schema: Schema) {
             }
         }
     }
+
 
 }

@@ -13,6 +13,10 @@ class InputHandler {
     fun handledSize(): Int {
         return handledList.size
     }
+
+    fun getInputValue(name: String): String? {
+        return handledList.firstOrNull { it.name == name }?.value
+    }
 }
 
 data class InputArg(val name: String, val value: String)
