@@ -1,7 +1,8 @@
+import org.junit.Test
 import kotlin.test.assertEquals
 
 class ArgsTest {
-    //@Test
+    @Test
     fun test() {
         val schema: Schema = Schema("l:boolean,a:int,s:string")
         val args = Args(schema)
