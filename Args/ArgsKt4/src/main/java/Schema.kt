@@ -8,8 +8,6 @@ class Schema(schemaSpec: String) {
             it.split(":").toArgSpec()
         }
     }
-
-
 }
 
 data class ArgSpec(val name: String, val type: String)
