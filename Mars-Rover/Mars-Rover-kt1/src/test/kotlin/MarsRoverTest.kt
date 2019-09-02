@@ -10,7 +10,7 @@ class MarsRoverTest {
      *  4. 火星车可以成批接受移动和转向指令
      *  5. 火星车接收到操作指令后，在完成操作后会立即回报当前位置和朝向
      */
-    @Test
+    //@Test
     internal fun test() {
         val marsRover = MarsRover()
         marsRover.handleInitCommand("X=100,Y=100,x=10,y=10,d=S")
@@ -22,5 +22,14 @@ class MarsRoverTest {
         assertEquals(Point(10, 4), marsRover.getPosition())
         assertEquals(Direction.E, marsRover.getDirection())
         assertEquals("x=10,y=4,d=E", marsRover.report())
+    }
+
+    @Test
+    fun should_has_area_and_point_and_direction_when_handle_init_command() {
+        val marsRover = MarsRover()
+        marsRover.handleInitCommand("X=100,Y=100,x=10,y=10,d=S")
+        assertEquals(Area(100, 100), marsRover.getArea())
+        assertEquals(Point(10, 10), marsRover.getPosition())
+        assertEquals(Direction.S, marsRover.getDirection())
     }
 }

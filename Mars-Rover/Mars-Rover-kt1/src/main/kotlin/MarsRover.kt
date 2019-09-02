@@ -1,27 +1,30 @@
 import com.sun.tools.javac.comp.Todo
 
 class MarsRover {
+    val handler = CommandHandler();
     fun getArea(): Area {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return initResult?.area ?: Area(0, 0)
     }
 
     fun getPosition(): Point {
-        TODO("not implemented")
+        return initResult?.point ?: Point(0, 0)
+
     }
 
     fun getDirection(): Direction {
-        TODO("not implemented")
+        return initResult?.direction ?: Direction.S
     }
 
     fun report(): String {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
+    var initResult: InitResult? = null
     fun handleInitCommand(initCommand: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        initResult = handler.handleInitCommand(initCommand)
     }
 
-    fun handleOperateCommand(operateCommend: String) : String {
+    fun handleOperateCommand(operateCommend: String): String {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
