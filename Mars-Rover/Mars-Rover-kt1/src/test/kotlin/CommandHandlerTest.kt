@@ -4,23 +4,23 @@ import org.junit.Test
 class CommandHandlerTest {
     @Test
     internal fun should_return_100X100_area_when_handled_init_command() {
-        val commandHandler = MarsRover().handler
-        val initResult = commandHandler.handleInitCommand("X=100,Y=100,x=10,y=10,d=S")
-        assertEquals(Area(100, 100), initResult.area)
+        val marsRover = MarsRover()
+        marsRover.handler.handleInitCommand("X=100,Y=100,x=10,y=10,d=S")
+        assertEquals(Area(100, 100), marsRover.area)
     }
 
     @Test
     internal fun should_return_10_and_10_point_when_handled_init_command() {
-        val commandHandler = MarsRover().handler
-        val initResult = commandHandler.handleInitCommand("X=100,Y=100,x=10,y=10,d=S")
-        assertEquals(Point(10, 10), initResult.point)
+        val marsRover = MarsRover()
+        marsRover.handler.handleInitCommand("X=100,Y=100,x=10,y=10,d=S")
+        assertEquals(Point(10, 10), marsRover.position)
     }
 
     @Test
     internal fun should_return_S_direction_when_handled_init_command() {
-        val commandHandler = MarsRover().handler
-        val initResult = commandHandler.handleInitCommand("X=100,Y=100,x=10,y=10,d=S")
-        assertEquals(Direction.S, initResult.direction)
+        val marsRover = MarsRover()
+        marsRover.handler.handleInitCommand("X=100,Y=100,x=10,y=10,d=S")
+        assertEquals(Direction.S, marsRover.direction)
     }
 
     @Test

@@ -11,10 +11,7 @@ class MarsRover {
     lateinit var direction: Direction
 
     fun handleInitCommand(initCommand: String) {
-        val initResult = handler.handleInitCommand(initCommand)
-        area = initResult.area
-        position = initResult.point
-        direction = initResult.direction
+        handler.handleInitCommand(initCommand)
     }
 
     fun handleOperateCommand(operateCommend: String): String {
