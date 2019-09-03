@@ -24,9 +24,15 @@ class CommandHandlerTest {
     }
 
     @Test
-    fun should_return_S_direction_when_handled__l_with_W_direction() {
-        val commandHandler = MarsRover().handler
-        assertEquals(Direction.S, commandHandler.handleDirectionCommand("l", Direction.W))
+    fun should_return_S_direction_when_handled_l_with_W_direction() {
+        val marsRover = MarsRover()
+        marsRover.direction = Direction.W
+        marsRover.handler.handleDirectionCommand("l")
+        assertEquals(Direction.S, marsRover.direction)
     }
 
+    @Test
+    fun should_return_split_of_command_when_given_operate_command() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 }

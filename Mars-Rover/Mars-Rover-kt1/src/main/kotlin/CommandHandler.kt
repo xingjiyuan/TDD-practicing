@@ -10,11 +10,10 @@ class CommandHandler(val rover: MarsRover) {
         rover.direction = Direction.valueOf(mutableMapOf["d"] ?: "")
     }
 
-    fun handleDirectionCommand(directionCommand: String, rawDirection: Direction): Direction {
-        return when (directionCommand) {
-            "l" -> rawDirection.toLeft()
-            "r" -> rawDirection.toRight()
-            else -> rawDirection
+    fun handleDirectionCommand(directionCommand: String) {
+        when (directionCommand) {
+            "l" -> rover.turnLeft()
+            "r" -> rover.turnRight()
         }
     }
 }
