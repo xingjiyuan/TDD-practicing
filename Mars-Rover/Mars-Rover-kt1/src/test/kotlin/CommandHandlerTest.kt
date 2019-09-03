@@ -33,6 +33,7 @@ class CommandHandlerTest {
 
     @Test
     fun should_return_split_of_command_when_given_operate_command() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val marsRover = MarsRover()
+        assertEquals(listOf("f=5", "b=3", "t=l"), marsRover.handler.splitOperateCommand("f=5,b=3,t=l"))
     }
 }
