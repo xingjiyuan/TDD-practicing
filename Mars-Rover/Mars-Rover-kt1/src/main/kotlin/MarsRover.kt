@@ -1,9 +1,8 @@
 class MarsRover {
     val handler = CommandHandler(this)
 
-
     fun report(): String {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return "x=${position.x},y=${position.y},d=${direction.name}"
     }
 
     lateinit var area: Area
@@ -15,7 +14,8 @@ class MarsRover {
     }
 
     fun handleOperateCommand(operateCommend: String): String {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        handler.handleOperateCommand(operateCommend)
+        return report()
     }
 
     fun forward(step: Int) {
