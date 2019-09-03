@@ -1,14 +1,11 @@
-import com.sun.tools.javac.comp.Todo
-
 class MarsRover {
-    val handler = CommandHandler();
+    val handler = CommandHandler()
     fun getArea(): Area {
         return initResult?.area ?: Area(0, 0)
     }
 
     fun getPosition(): Point {
         return initResult?.point ?: Point(0, 0)
-
     }
 
     fun getDirection(): Direction {

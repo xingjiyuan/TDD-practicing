@@ -26,6 +26,6 @@ class CommandHandlerTest {
     @Test
     fun should_return_S_direction_when_handled__l_with_W_direction() {
         val commandHandler = CommandHandler()
-        assertEquals(Direction.S,commandHandler.handleDirectionCommand("l",Direction.W))
+        assertEquals(Direction.S, commandHandler.handleDirectionCommand("l", Direction.W))
     }
 }

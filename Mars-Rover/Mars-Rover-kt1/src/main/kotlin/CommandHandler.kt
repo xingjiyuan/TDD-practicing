@@ -12,8 +12,8 @@ class CommandHandler {
 
     fun handleDirectionCommand(directionCommand: String, rawDirection: Direction): Direction {
         return when (directionCommand) {
-            "l" -> rawDirection.turnLeft()
-            "r" -> rawDirection.turnRight()
+            "l" -> rawDirection.toLeft()
+            "r" -> rawDirection.toRight()
             else -> rawDirection
         }
     }

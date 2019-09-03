@@ -10,12 +10,12 @@ data class Point(val x: Int, val y: Int)
 enum class Direction {
     N, E, S, W;
 
-    fun turnLeft(): Direction {
+    fun toLeft(): Direction {
         val leftIndex = if (ordinal == 0) Direction.values().size - 1 else ordinal - 1
         return Direction.values()[leftIndex]
     }
 
-    fun turnRight(): Direction {
+    fun toRight(): Direction {
         val rightIndex = (ordinal + 1) % Direction.values().size
         return Direction.values()[rightIndex]
     }
