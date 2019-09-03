@@ -28,4 +28,5 @@ class CommandHandlerTest {
         val commandHandler = MarsRover().handler
         assertEquals(Direction.S, commandHandler.handleDirectionCommand("l", Direction.W))
     }
+
 }

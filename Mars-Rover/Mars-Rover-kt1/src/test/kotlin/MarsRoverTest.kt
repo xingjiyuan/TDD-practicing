@@ -32,4 +32,44 @@ class MarsRoverTest {
         assertEquals(Point(10, 10), marsRover.position)
         assertEquals(Direction.S, marsRover.direction)
     }
+
+    @Test
+    fun should_has_position_5_and_10_when_forward_with_W_direction() {
+        val marsRover = MarsRover()
+        marsRover.handleInitCommand("X=100,Y=100,x=10,y=10,d=W")
+        marsRover.forward(5)
+        assertEquals(Point(5, 10), marsRover.position)
+    }
+
+    @Test
+    fun should_has_position_15_and_10_when_forward_with_E_direction() {
+        val marsRover = MarsRover()
+        marsRover.handleInitCommand("X=100,Y=100,x=10,y=10,d=E")
+        marsRover.forward(5)
+        assertEquals(Point(15, 10), marsRover.position)
+    }
+
+    @Test
+    fun should_has_position_10_and_5_when_forward_with_S_direction() {
+        val marsRover = MarsRover()
+        marsRover.handleInitCommand("X=100,Y=100,x=10,y=10,d=S")
+        marsRover.forward(5)
+        assertEquals(Point(10, 5), marsRover.position)
+    }
+
+    @Test
+    fun should_has_position_10_and_15_when_forward_with_N_direction() {
+        val marsRover = MarsRover()
+        marsRover.handleInitCommand("X=100,Y=100,x=10,y=10,d=N")
+        marsRover.forward(5)
+        assertEquals(Point(10, 15), marsRover.position)
+    }
+
+    @Test
+    fun should_return_position_when_backward() {
+        val marsRover = MarsRover()
+        marsRover.handleInitCommand("X=100,Y=100,x=10,y=10,d=N")
+        marsRover.backward(5)
+        assertEquals(Point(10, 5), marsRover.position)
+    }
 }
