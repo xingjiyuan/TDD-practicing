@@ -37,8 +37,16 @@ class CommandHandler(val rover: MarsRover) {
         }
     }
 
-    fun splitOperateCommand(operateCommand: String): List<String> {
-        return operateCommand.split(",")
+    fun handleOperateCommand(operateCommandStr: String) {
+        val operateCommands = splitToCommands(operateCommandStr)
+
+        operateCommands.forEach {
+            when (it.name) {
+                "f" -> rover.forward(it.value.toInt())
+                "b" -> rover.backward(it.value.toInt())
+                "t" -> handleDirectionCommand(it.value)
+            }
+        }
     }
 }
 

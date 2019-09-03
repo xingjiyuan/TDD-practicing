@@ -31,5 +31,36 @@ class CommandHandlerTest {
         assertEquals(Direction.S, marsRover.direction)
     }
 
+    @Test
+    fun should_handle_forward_command() {
+        val marsRover = MarsRover()
+        marsRover.handler.handleInitCommand("X=100,Y=100,x=10,y=10,d=S")
+        marsRover.handler.handleOperateCommand("f=5")
+        assertEquals(Point(10, 5), marsRover.position)
+    }
 
+    @Test
+    fun should_handle_backward_command() {
+        val marsRover = MarsRover()
+        marsRover.handler.handleInitCommand("X=100,Y=100,x=10,y=10,d=S")
+        marsRover.handler.handleOperateCommand("b=5")
+        assertEquals(Point(10, 15), marsRover.position)
+    }
+
+    @Test
+    fun should_handle_turn_command() {
+        val marsRover = MarsRover()
+        marsRover.handler.handleInitCommand("X=100,Y=100,x=10,y=10,d=N")
+        marsRover.handler.handleOperateCommand("t=l")
+        assertEquals(Direction.W, marsRover.direction)
+    }
+
+    @Test
+    fun should_handle_batch_operate_command() {
+        val marsRover = MarsRover()
+        marsRover.handler.handleInitCommand("X=100,Y=100,x=10,y=10,d=N")
+        marsRover.handler.handleOperateCommand("t=l,t=l,f=5,b=4")
+        assertEquals(Direction.S, marsRover.direction)
+        assertEquals(Point(10, 9), marsRover.position)
+    }
 }
