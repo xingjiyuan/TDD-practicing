@@ -14,13 +14,13 @@ class MarsRoverTest {
     internal fun test() {
         val marsRover = MarsRover()
         marsRover.handleInitCommand("X=100,Y=100,x=10,y=10,d=S")
-        assertEquals(Area(100, 100), marsRover.getArea())
-        assertEquals(Point(10, 10), marsRover.getPosition())
-        assertEquals(Direction.S, marsRover.getDirection())
+        assertEquals(Area(100, 100), marsRover.area)
+        assertEquals(Point(10, 10), marsRover.position)
+        assertEquals(Direction.S, marsRover.direction)
 
         assertEquals("x=10,y=4,d=E", marsRover.handleOperateCommand("f=6,t=l"))
-        assertEquals(Point(10, 4), marsRover.getPosition())
-        assertEquals(Direction.E, marsRover.getDirection())
+        assertEquals(Point(10, 4), marsRover.position)
+        assertEquals(Direction.E, marsRover.direction)
         assertEquals("x=10,y=4,d=E", marsRover.report())
     }
 
@@ -28,8 +28,8 @@ class MarsRoverTest {
     fun should_has_area_and_point_and_direction_when_handle_init_command() {
         val marsRover = MarsRover()
         marsRover.handleInitCommand("X=100,Y=100,x=10,y=10,d=S")
-        assertEquals(Area(100, 100), marsRover.getArea())
-        assertEquals(Point(10, 10), marsRover.getPosition())
-        assertEquals(Direction.S, marsRover.getDirection())
+        assertEquals(Area(100, 100), marsRover.area)
+        assertEquals(Point(10, 10), marsRover.position)
+        assertEquals(Direction.S, marsRover.direction)
     }
 }

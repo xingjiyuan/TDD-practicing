@@ -1,24 +1,20 @@
 class MarsRover {
-    val handler = CommandHandler()
-    fun getArea(): Area {
-        return initResult?.area ?: Area(0, 0)
-    }
+    val handler = CommandHandler(this)
 
-    fun getPosition(): Point {
-        return initResult?.point ?: Point(0, 0)
-    }
-
-    fun getDirection(): Direction {
-        return initResult?.direction ?: Direction.S
-    }
 
     fun report(): String {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    var initResult: InitResult? = null
+    lateinit var area: Area
+    lateinit var position: Point
+    lateinit var direction: Direction
+
     fun handleInitCommand(initCommand: String) {
-        initResult = handler.handleInitCommand(initCommand)
+        val initResult = handler.handleInitCommand(initCommand)
+        area = initResult.area
+        position = initResult.point
+        direction = initResult.direction
     }
 
     fun handleOperateCommand(operateCommend: String): String {

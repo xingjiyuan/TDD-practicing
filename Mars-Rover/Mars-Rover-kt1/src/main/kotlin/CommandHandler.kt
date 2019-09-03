@@ -1,4 +1,4 @@
-class CommandHandler {
+class CommandHandler(val rover: MarsRover) {
     fun handleInitCommand(initCommand: String): InitResult {
         val mutableMapOf = mutableMapOf<String, String>()
         initCommand.split(",")
