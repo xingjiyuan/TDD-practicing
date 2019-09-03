@@ -1,5 +1,13 @@
 data class Area(val x: Int, val y: Int)
-data class Point(val x: Int, val y: Int)
+data class Point(val x: Int, val y: Int) {
+    fun addX(step: Int): Point {
+        return Point(x + step, y)
+    }
+
+    fun addY(step: Int): Point {
+        return Point(x, y + step)
+    }
+}
 
 /**
  * N =north 北
