@@ -31,9 +31,5 @@ class CommandHandlerTest {
         assertEquals(Direction.S, marsRover.direction)
     }
 
-    @Test
-    fun should_return_split_of_command_when_given_operate_command() {
-        val marsRover = MarsRover()
-        assertEquals(listOf("f=5", "b=3", "t=l"), marsRover.handler.splitOperateCommand("f=5,b=3,t=l"))
-    }
+
 }

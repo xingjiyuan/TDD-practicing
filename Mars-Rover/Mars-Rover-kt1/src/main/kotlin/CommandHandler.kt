@@ -1,17 +1,17 @@
 class CommandHandler(val rover: MarsRover) {
     fun handleInitCommand(initCommandStr: String) {
-        val mutableMapOf = mutableMapOf<String, String>()
-        val initCommands = initCommandStr.split(",")
-            .map { it.split("=") }
-            .map { Command(it[0], it[1]) }.toList().also {
-                it.forEach {
-                    mutableMapOf.put(it.name, it.value)
-                }
-            }
+        val initCommands = splitToCommands(initCommandStr)
 
         initArea(initCommands)
         initPosition(initCommands)
         initDirection(initCommands)
+    }
+
+    private fun splitToCommands(commandStr: String): List<Command> {
+        return commandStr.split(",")
+            .map { it.split("=") }
+            .map { Command(it[0], it[1]) }
+            .toList()
     }
 
     private fun initDirection(initCommands: List<Command>) {
