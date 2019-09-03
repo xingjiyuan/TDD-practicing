@@ -72,4 +72,15 @@ class MarsRoverTest {
         marsRover.backward(5)
         assertEquals(Point(10, 5), marsRover.position)
     }
+
+    @Test
+    fun should_return_direction_when_turned_left() {
+        val marsRover = MarsRover()
+        marsRover.handleInitCommand("X=100,Y=100,x=10,y=10,d=N")
+        assertEquals(Direction.N, marsRover.direction)
+        marsRover.turnLeft()
+        assertEquals(Direction.W, marsRover.direction)
+        marsRover.turnRight()
+        assertEquals(Direction.N, marsRover.direction)
+    }
 }

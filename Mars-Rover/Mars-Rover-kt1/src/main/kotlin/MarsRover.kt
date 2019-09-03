@@ -34,4 +34,12 @@ class MarsRover {
         forward(-step)
     }
 
+    fun turnLeft() {
+        direction = direction.toLeft()
+    }
+
+    fun turnRight() {
+        direction = direction.toRight()
+    }
+
 }
