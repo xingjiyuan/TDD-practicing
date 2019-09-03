@@ -10,6 +10,14 @@ class CommandHandler {
         return InitResult(area, point, direction)
     }
 
+    fun handleDirectionCommand(directionCommand: String, rawDirection: Direction): Direction {
+        return when (directionCommand) {
+            "l" -> rawDirection.turnLeft()
+            "r" -> rawDirection.turnRight()
+            else -> rawDirection
+        }
+    }
+
 }
 
 data class InitResult(val area: Area, val point: Point, val direction: Direction)
